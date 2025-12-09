@@ -64,10 +64,12 @@ TailwindCSS v4 design system
 Smooth panning, zooming, snapping behavior
 
 🧱 Tech Stack
+
 Layer	Technologies
 Frontend	React 18, TypeScript, React Flow, Zustand, Axios, Vite, TailwindCSS 4, Framer Motion
 Backend	Node.js, Express, CORS
 Build Tools	Vite, ES Modules
+
 📁 Folder Structure
 ```md
 workflow-designer/
