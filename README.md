@@ -68,7 +68,8 @@ Frontend	React 18, TypeScript, React Flow, Zustand, Axios, Vite, TailwindCSS 4, 
 Backend	Node.js, Express, CORS
 Build Tools	Vite, ES Modules
 📁 Folder Structure
-'''workflow-designer/
+```md
+workflow-designer/
  ├── src/
  │   ├── api/              # Axios REST API client
  │   ├── components/       # Canvas, CustomNode, NodeForm, Toast, Sidebar
@@ -83,7 +84,8 @@ Build Tools	Vite, ES Modules
  ├── public/               # Static assets
  ├── package.json          # Dependencies + scripts
  └── vite.config.ts        # Vite configuration
-'''
+```
+
 ▶️ Running the Project
 1. Start Backend
 cd server
