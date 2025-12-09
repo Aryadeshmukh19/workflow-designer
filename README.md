@@ -1,89 +1,140 @@
-# Workflow Designer — Frontend Internship Project
+🚀 **Workflow Designer – Frontend Internship Assignment - TREDENCE**
 
-**Stack:** Vite + React + TypeScript • TailwindCSS • React Flow • Zustand • Express / FastAPI • Rust (validator)
+A lightweight, modular workflow builder UI built using React, TypeScript, React Flow, Zustand, TailwindCSS, and a minimal Node.js REST API backend.
 
-A compact, demonstrable prototype of an HR Workflow Designer with drag-and-drop canvas, custom nodes, editable node forms, mock REST API simulation, and tooling to validate/export workflows. This repo intentionally highlights bonus skills (Tailwind, Zustand, Node API, Rust validator).
+This project demonstrates the ability to take a real-world requirement and turn it into a functional, polished UI system.
 
----
+✨ **Features**
+🔹 1. Drag-and-Drop Workflow Builder
 
-## Quick start (recommended: Express API)
+Add nodes by dragging from the left palette
 
-1. Install dependencies (frontend + server):
-```bash
-# root
-npm install
-# server
-cd server && npm install
-```
+Smooth animated node mounting using Framer Motion
 
-2. Run the mock API (Express):
-```bash
+Custom node cards with icons, shadows, and selection states
+
+🔹 2. Node Inspector Panel
+
+Select a node to edit its properties
+
+Automated nodes support action assignment
+
+Form updates dynamically based on selected node
+
+🔹 3. REST API Integration
+
+The frontend communicates with the backend through two endpoints:
+
+GET /api/automations
+
+Fetches available automated actions.
+
+POST /api/simulate
+
+Sends { nodes, edges } and returns a mock execution result.
+
+All networking is done using Axios.
+
+🔹 4. Simulation Engine
+
+Runs workflow logic through backend
+
+Displays results in a smooth toast animation
+
+Useful for debugging or validating graph structure
+
+🔹 5. JSON Import / Export
+
+Export workflow to a .json file
+
+Import an existing workflow and continue editing
+
+🔹 6. Polished UI
+
+Framer Motion animations
+
+Lucide icons
+
+TailwindCSS v4 styling
+
+Three-panel responsive layout (Sidebar → Canvas → Inspector)
+
+Improved drag, zoom, and pan behavior
+
+🧱 **Tech Stack**
+
+Frontend:
+
+React 18
+
+TypeScript
+
+React Flow
+
+Zustand (state management + undo/redo support)
+
+TailwindCSS 4
+
+Framer Motion
+
+Axios
+
+Vite
+
+Backend:
+
+Node.js
+
+Express
+
+CORS enabled
+
+Mock REST API for workflow simulation
+
+📁 **Folder Structure**
+workflow-designer/
+ ├── src/
+ │   ├── api/           # API client (axios)
+ │   ├── components/    # Canvas, CustomNode, Inspector, etc
+ │   ├── stores/        # Zustand store + history
+ │   ├── index.css
+ │   ├── App.tsx
+ │   └── main.tsx
+ ├── server/
+ │   └── index.js       # Mock backend with REST API
+ ├── public/
+ ├── package.json
+ └── vite.config.ts
+
+▶️ Running the Project
+Start the Backend
 cd server
-node index.js
-# server runs on http://localhost:5173
-```
+PORT=5174 node index.js
 
-3. Start the frontend (new terminal/tab):
-```bash
+Start the Frontend
+npm install
 npm run dev
-# open http://localhost:5173
-```
 
-4. Use the app:
-- Drag nodes from the left sidebar to the canvas
-- Connect nodes, click nodes to edit label or set an automation (for Automated nodes)
-- Click **Run Simulation** in the right panel to POST the workflow to the mock API and receive step-by-step results
-- Click **Export JSON** to download your workflow
 
----
+Frontend runs at:
 
-## Docker (one-command local run)
+👉 http://localhost:5173
 
-A `docker-compose.yml` is included to run the frontend and Express API together.
+🧪 Simulation Example
 
-```bash
-docker-compose up --build
-# frontend on 5174, api on 5173 (mapped inside compose)
-```
+Request Body (sent to /api/simulate):
 
----
+{
+  "nodes": [
+    { "id": "1", "type": "custom", "data": { "label": "Start" } }
+  ],
+  "edges": []
+}
 
-## Project highlights (for reviewer)
-- Drag & drop + React Flow canvas with MiniMap and undo/redo controls
-- Custom node component and NodeForm with dynamic action params for Automated nodes
-- Zustand for state management; clean small store API
-- Express simulation engine that detects cycles and traverses the graph deterministically
-- FastAPI alternative included for Python preference
-- Rust Cargo project (`rust-utils`) with cycle-checker utility
-- Example workflow ready to load (`/examples/example1.json`)
-- Export/Import workflow JSON support
 
----
+Example Response:
 
-## Files of interest
-- `src/components/Canvas.tsx` — React Flow canvas (mini-map, undo/redo)
-- `src/components/NodeForm.tsx` — dynamic forms and automation params
-- `src/stores/useStore.ts` — Zustand store
-- `server/index.js` — Express simulation
-- `server_fastapi/main.py` — FastAPI alternative
-- `rust-utils/` — Rust validator project
-
----
-
-## How to present (5-minute demo)
-1. Show the canvas and drag a Start → Task → Automated → End
-2. Click Automated node and choose an action (Send Email), fill params
-3. Run Simulation — show the returned steps
-4. Export JSON and run Rust validator locally (optional)
-5. Open README and point to `APPLICATION_REPLY.txt` showing final submission text
-
----
-
-## Next improvements (if you have more time)
-- Full-form validation & dynamic param types (dates, numbers, enums)
-- Server-side simulation with stateful execution logs
-- Undo/redo persistence, import presets, multi-user collaboration
-- Unit tests + GitHub Actions CI, prettier/eslint and storybook
-
----
-
+{
+  "status": "ok",
+  "processedNodes": 1
+}
