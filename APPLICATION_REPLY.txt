@@ -1,0 +1,14 @@
+Hello,
+
+Please find my application for the Frontend Internship below.
+
+GitHub project (workflow-designer): https://github.com/your-username/workflow-designer
+Other repos / apps: (1) https://github.com/your-username/portfolio (2) https://github.com/your-username/todo-app
+Short note on a tricky frontend bug I solved:
+- Problem: A memory leak and duplicate event handlers when integrating a third-party canvas library.
+- Fix: Used React Flow's internal event hooks, centralized subscription/unsubscription in useEffect cleanup, and debounced heavy handlers. Confirmed with React Profiler and removed duplicate re-renders.
+Resume / LinkedIn: https://www.linkedin.com/in/your-profile
+Notes: The project includes bonus tech: TailwindCSS, Zustand for state, a small Node Express mock API, and a placeholder Rust validator in /rust-utils.
+
+Best,
+[Your Name]

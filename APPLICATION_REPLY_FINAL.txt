@@ -1,0 +1,19 @@
+Hello,
+
+I'm applying for the Frontend Internship. Below is my submission.
+
+GitHub project (workflow-designer): https://github.com/<your-username>/workflow-designer
+Other apps / repos:
+- Portfolio: https://github.com/<your-username>/portfolio
+- Todo app: https://github.com/<your-username>/todo-app
+
+One tricky frontend bug I fixed (brief):
+- Issue: Duplicate event handlers and re-renders when integrating React Flow with external subscriptions caused the app to emit duplicate API calls and memory pressure.
+- Fix: Centralized event handling inside React Flow lifecycle hooks and ensured cleanup in useEffect. Debounced heavy handlers and moved shared state into Zustand to avoid prop drilling. Verified with React Profiler and memory snapshots.
+
+Resume / LinkedIn: https://www.linkedin.com/in/<your-profile>
+
+Notes: Project demonstrates bonus skills — Tailwind, Zustand, Vite, Node Express mock API, and an optional Rust validator. See README for run instructions and demo script.
+
+Regards,
+[Your Name]

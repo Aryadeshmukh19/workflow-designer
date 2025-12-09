@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  api:
+    build: ./server
+    ports:
+      - '5173:5173'
+  frontend:
+    build: .
+    ports:
+      - '5174:80'
+    depends_on:
+      - api
