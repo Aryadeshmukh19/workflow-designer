@@ -123,3 +123,11 @@ Response Example
 ```
 ## 🎥 Demo
 ![Workflow Demo](WORKFLOW-DESIGNER-TREDENCE-ARYADESHMUKH-gif.mp4)
+
+📝 **Tricky Bug Solved**
+
+React Flow was rendering nodes visually but not mapping them to the custom React components defined in nodeTypes.
+
+The root cause was that ReactFlowProvider was wrapping the entire app rather than the internal Canvas instance. React Flow requires the provider to be scoped around the graph component itself to register nodeTypes and trigger updates during HMR correctly.
+
+After inspecting the DOM structure and component tree, the provider was repositioned to wrap FlowInner, resolving the rendering and node registration issue.
