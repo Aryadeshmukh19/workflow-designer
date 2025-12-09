@@ -124,7 +124,7 @@ Response Example
 ## 🎥 Demo
 ![Workflow Demo](WORKFLOW-DESIGNER-TREDENCE-ARYADESHMUKH-gif.mp4)
 
-📝 **Tricky Bug Solved**
+## 📝 **Tricky Bug Solved**
 
 React Flow was rendering nodes visually but not mapping them to the custom React components defined in nodeTypes.
 
