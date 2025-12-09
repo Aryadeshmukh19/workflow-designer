@@ -1,9 +1,9 @@
-🚀 Workflow Designer – Frontend Internship Assignment
+🚀 **Workflow Designer – Frontend Internship Assignment- TREDENCE**
 
 A modular, interactive Workflow Builder UI built with React, TypeScript, React Flow, Zustand, TailwindCSS, and a REST API backend.
 This project demonstrates practical frontend engineering skills by converting functional requirements into a polished, production-style interface.
 
-✨ Features Overview
+✨ **Features Overview**
 
 🔹 1. Drag-and-Drop Workflow Canvas
 
@@ -63,14 +63,14 @@ TailwindCSS v4 design system
 
 Smooth panning, zooming, snapping behavior
 
-🧱 Tech Stack
+🧱 **Tech Stack**
 
 Layer	Technologies
 Frontend	React 18, TypeScript, React Flow, Zustand, Axios, Vite, TailwindCSS 4, Framer Motion
 Backend	Node.js, Express, CORS
 Build Tools	Vite, ES Modules
 
-📁 Folder Structure
+📁 **Folder Structure**
 ```md
 workflow-designer/
  ├── src/
@@ -89,7 +89,7 @@ workflow-designer/
  └── vite.config.ts        # Vite configuration
 ```
 
-▶️ Running the Project
+▶️ R**unning the Project**
 1. Start Backend
 cd server
 PORT=5174 node index.js
@@ -105,7 +105,8 @@ App runs on:
 Backend runs on:
 👉 http://localhost:5174
 
-🧪 Simulation Request Example
+🧪 **Simulation Request Example**
+``` md 
 Request Body
 {
   "nodes": [
@@ -119,3 +120,4 @@ Response Example
   "status": "ok",
   "processedNodes": 1
 }
+```
