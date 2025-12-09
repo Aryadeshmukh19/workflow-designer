@@ -4,6 +4,7 @@ A modular, interactive Workflow Builder UI built with React, TypeScript, React F
 This project demonstrates practical frontend engineering skills by converting functional requirements into a polished, production-style interface.
 
 ✨ Features Overview
+
 🔹 1. Drag-and-Drop Workflow Canvas
 
 Add nodes by dragging from the left palette
