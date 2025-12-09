@@ -1,129 +1,107 @@
-🚀 **Workflow Designer – Frontend Internship Assignment - TREDENCE**
+🚀 Workflow Designer – Frontend Internship Assignment
 
-A lightweight, modular workflow builder UI built using React, TypeScript, React Flow, Zustand, TailwindCSS, and a minimal Node.js REST API backend.
+A modular, interactive Workflow Builder UI built with React, TypeScript, React Flow, Zustand, TailwindCSS, and a REST API backend.
+This project demonstrates practical frontend engineering skills by converting functional requirements into a polished, production-style interface.
 
-This project demonstrates the ability to take a real-world requirement and turn it into a functional, polished UI system.
-
-✨ **Features**
-🔹 1. Drag-and-Drop Workflow Builder
+✨ Features Overview
+🔹 1. Drag-and-Drop Workflow Canvas
 
 Add nodes by dragging from the left palette
 
-Smooth animated node mounting using Framer Motion
+Smooth animated node entry using Framer Motion
 
-Custom node cards with icons, shadows, and selection states
+Custom-styled node cards (icons, shadows, hover, selected states)
 
-🔹 2. Node Inspector Panel
+🔹 2. Node Inspector (Right Sidebar)
 
-Select a node to edit its properties
+Edit node label and type-specific metadata
 
-Automated nodes support action assignment
+Automated nodes support predefined actions
 
-Form updates dynamically based on selected node
+Live-updating form based on selected node
 
 🔹 3. REST API Integration
 
-The frontend communicates with the backend through two endpoints:
+The frontend interacts with a mock backend via:
 
 GET /api/automations
 
-Fetches available automated actions.
+Returns available automation actions.
 
 POST /api/simulate
 
-Sends { nodes, edges } and returns a mock execution result.
+Accepts { nodes, edges } and returns a mock workflow execution result.
 
-All networking is done using Axios.
+Networking handled through Axios.
 
 🔹 4. Simulation Engine
 
-Runs workflow logic through backend
+Runs workflow on backend
 
-Displays results in a smooth toast animation
+Returns JSON simulation result
 
-Useful for debugging or validating graph structure
+Custom toast UI displays result
 
-🔹 5. JSON Import / Export
+Useful for validator/debug flows
 
-Export workflow to a .json file
+🔹 5. Workflow Export / Import
 
-Import an existing workflow and continue editing
+Export workflow graph to JSON
+
+Import previous workflows to continue editing
 
 🔹 6. Polished UI
 
-Framer Motion animations
+Fully responsive layout
+
+Animated transitions
 
 Lucide icons
 
-TailwindCSS v4 styling
+TailwindCSS v4 design system
 
-Three-panel responsive layout (Sidebar → Canvas → Inspector)
+Smooth panning, zooming, snapping behavior
 
-Improved drag, zoom, and pan behavior
-
-🧱 **Tech Stack**
-
-Frontend:
-
-React 18
-
-TypeScript
-
-React Flow
-
-Zustand (state management + undo/redo support)
-
-TailwindCSS 4
-
-Framer Motion
-
-Axios
-
-Vite
-
-Backend:
-
-Node.js
-
-Express
-
-CORS enabled
-
-Mock REST API for workflow simulation
-
-📁 **Folder Structure**
-workflow-designer/
+🧱 Tech Stack
+Layer	Technologies
+Frontend	React 18, TypeScript, React Flow, Zustand, Axios, Vite, TailwindCSS 4, Framer Motion
+Backend	Node.js, Express, CORS
+Build Tools	Vite, ES Modules
+📁 Folder Structure
+'''workflow-designer/
  ├── src/
- │   ├── api/           # API client (axios)
- │   ├── components/    # Canvas, CustomNode, Inspector, etc
- │   ├── stores/        # Zustand store + history
- │   ├── index.css
- │   ├── App.tsx
- │   └── main.tsx
+ │   ├── api/              # Axios REST API client
+ │   ├── components/       # Canvas, CustomNode, NodeForm, Toast, Sidebar
+ │   ├── stores/           # Zustand store + undo/redo history
+ │   ├── index.css         # Global styles + TailwindCSS v4 config
+ │   ├── App.tsx           # App layout (Sidebar → Canvas → Inspector)
+ │   └── main.tsx          # Entry point
+ │
  ├── server/
- │   └── index.js       # Mock backend with REST API
- ├── public/
- ├── package.json
- └── vite.config.ts
-
+ │   └── index.js          # Mock backend (GET /automations, POST /simulate)
+ │
+ ├── public/               # Static assets
+ ├── package.json          # Dependencies + scripts
+ └── vite.config.ts        # Vite configuration
+'''
 ▶️ Running the Project
-Start the Backend
+1. Start Backend
 cd server
 PORT=5174 node index.js
 
-Start the Frontend
+2. Start Frontend
 npm install
 npm run dev
 
 
-Frontend runs at:
-
+App runs on:
 👉 http://localhost:5173
 
-🧪 Simulation Example
+Backend runs on:
+👉 http://localhost:5174
 
-Request Body (sent to /api/simulate):
-
+🧪 Simulation Request Example
+Request Body
 {
   "nodes": [
     { "id": "1", "type": "custom", "data": { "label": "Start" } }
@@ -131,9 +109,7 @@ Request Body (sent to /api/simulate):
   "edges": []
 }
 
-
-Example Response:
-
+Response Example
 {
   "status": "ok",
   "processedNodes": 1
