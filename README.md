@@ -121,3 +121,5 @@ Response Example
   "processedNodes": 1
 }
 ```
+## 🎥 Demo
+![Workflow Demo](demo.gif)
